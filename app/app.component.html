@@ -1,0 +1,78 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<style>
+.fa-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+</style>
+<div class="container">
+  <p><i class="fa fa-users" aria-hidden="true"></i>  &nbsp;Choose number of people</p>
+   <table class="table table-bordered">
+     <thead></thead>
+     <tbody>
+       <tr>
+         <td><i class="fa fa-bed" aria-hidden="true"></i> &nbsp; ROOMS</td>
+         <td>
+           <span *ngIf="!roomMinusDisable">
+             <i class="fa fa-minus-circle" aria-hidden="true" (click)="handleRoomClick('minus')"></i>
+            </span>
+           <span *ngIf="roomMinusDisable">
+             <i class="fa fa-minus-circle fa-disabled" aria-hidden="true"></i>
+            </span>
+           &nbsp;&nbsp;
+           <span>{{ roomCount }}</span>
+           &nbsp;&nbsp;
+           <span *ngIf="!roomAddDisable">
+             <i class="fa fa-plus-circle" aria-hidden="true" (click)="handleRoomClick('add')"></i>
+            </span>
+            <span *ngIf="roomAddDisable">
+                <i class="fa fa-plus-circle fa-disabled" aria-hidden="true"></i>
+               </span>
+         </td>
+       </tr>
+       <tr>
+        <td><i class="fa fa-user" aria-hidden="true"></i>  &nbsp;ADULTS</td>
+        <td>
+          <span *ngIf="!adultMinusDisable">
+            <i class="fa fa-minus-circle" aria-hidden="true" (click)="handleAdultClick('minus')"></i>
+          </span>
+          <span *ngIf="adultMinusDisable">
+              <i class="fa fa-minus-circle fa-disabled" aria-hidden="true"></i>
+            </span>
+          &nbsp;&nbsp;
+           <span><span>{{ adultCount }}</span></span>
+           &nbsp;&nbsp;
+           <span *ngIf="!adultAddDisable">
+             <i class="fa fa-plus-circle" aria-hidden="true" (click)="handleAdultClick('add')"></i>
+            </span>
+            <span *ngIf="adultAddDisable">
+                <i class="fa fa-plus-circle fa-disabled" aria-hidden="true"></i>
+               </span>
+        </td>
+       </tr>
+       <tr>
+        <td><i class="fa fa-child" aria-hidden="true"></i>  &nbsp;CHILDREN</td>
+        <td>
+          <span *ngIf="!childMinusDisable">
+            <i class="fa fa-minus-circle" aria-hidden="true" (click)="handleChildClick('minus')"></i>
+          </span>
+          <span *ngIf="childMinusDisable">
+              <i class="fa fa-minus-circle fa-disabled" aria-hidden="true"></i>
+            </span>
+          &nbsp;&nbsp;
+           <span><span>{{ childCount }}</span></span>
+           &nbsp;&nbsp;
+           <span *ngIf="!childAddDisable">
+             <i class="fa fa-plus-circle" aria-hidden="true" (click)="handleChildClick('add')"></i>
+            </span>
+            <span *ngIf="childAddDisable">
+                <i class="fa fa-plus-circle fa-disabled" aria-hidden="true"></i>
+               </span>
+        </td>
+       </tr>
+     </tbody>
+   </table>
+</div>
+
+
+<router-outlet></router-outlet>
